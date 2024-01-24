@@ -1,0 +1,53 @@
+<section class="mb-5">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-6">
+        <div class="card shadow-0 border" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-12 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+              <div class="d-flex align-items-center mb-3 pb-1">
+                    <img src="https://i.ibb.co/72wHVFb/logo-lanara.jpg"
+                    class="me-3 mb-4" height="40"/>
+                  </div>
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign up your account</h5>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="form-outline mb-4">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control border" %>
+  </div>
+
+  <div class="form-outline mb-4">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", class: "form-control border" %>
+  </div>
+
+  <div class="form-outline mb-4">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control border" %>
+  </div>
+
+  <div class="pt-1 mb-4">
+    <%= f.submit "Sign up", class: "btn btn-dark btn-lg btn-block btn-rounded shadow-0 border",
+    id: "btn-dark" %>
+  </div>
+<% end %>
+<p class="mb-5 pb-lg-2" style="color: #393f81;">Have an account? 
+<%= render "devise/shared/links" %>
+</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+

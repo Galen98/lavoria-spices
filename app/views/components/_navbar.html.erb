@@ -1,0 +1,67 @@
+<nav class="navbar p-3 bg-white border-bottom shadow-0">
+  <div class="container-fluid">
+    <a class="navbar-brand mb-2" href="/">
+    <img
+    src="https://i.ibb.co/72wHVFb/logo-lanara.jpg"
+    width="80"
+    height="25"/>
+    </a>
+
+    <form class="d-flex input-group w-auto">
+      <input
+        type="search"
+        class="form-control rounded-pill"
+        placeholder="Search"
+        aria-label="Search"
+        aria-describedby="search-addon"
+      />
+      <span class="input-group-text border-0" id="search-addon">
+        <i class="fas fa-search"></i>
+      </span>
+    </form>
+
+      <div class="d-flex align-items-center me-2 mt-3">
+      <a class="text-reset me-3" href="#">
+        <i class="fa" style="font-size:24px">&#xf07a;</i>
+      <span class='badge badge-warning' id='lblCartCount'>
+       5 </span>
+      </a>
+
+      <% if current_user %>
+      <a class="text-reset me-3">
+      <a class="text-reset me-3" href="/users/profile">
+      <button class="btn btn-outline-dark btn-rounded">Profile</button>
+      </a>
+      <%
+=begin%>
+ <%= current_user.email %> 
+<%
+=end%>
+       <button type="button" class="btn btn-outline-dark btn-rounded"
+       data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#exampleModal">Logout</button>
+      </a>
+      <% else %>
+      <a class="text-reset me-3" href="/users/sign_in">
+      <button class="btn btn-outline-dark btn-rounded">Login</button>
+      </a>
+      <% end %>
+    </div>
+  </div>
+</nav>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header fw-semibold border-0">
+        <h5 class="modal-title text-center txt-blacks font-lights" 
+        id="exampleModalLabel">Are you sure to Logout?</h5>
+        <button type="button" class="btn-close" data-mdb-ripple-init data-mdb-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-light shadow-0" data-mdb-ripple-init data-mdb-dismiss="modal">Cancel</button>
+         <%= link_to 'Logout', destroy_user_session_path, class: "btn btn-dark shadow-0" %>
+      </div>
+    </div>
+  </div>
+</div>

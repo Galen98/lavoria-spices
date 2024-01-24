@@ -1,0 +1,50 @@
+<section class="vh-100 mb-5">
+  <div class="container py-5">
+  <div class="row d-flex justify-content-center align-items-center">
+      <div class="col col-xl-6">
+  <div class="card shadow-0 border" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-12 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+                <form>
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <h3 class="txt-blacks fw-bold">Profile</h3>
+                  </div>
+                  <label class="form-label" for="customRange1">First name</label>
+                  <% if @profile.first_name.nil? || @profile.first_name.empty? %>
+                  <p class="txt-blacks font-lights">Your first name is blank</p>
+                  <%else%>
+                  <p class="txt-blacks font-lights"><%= @profile.first_name %></p>
+                  <%end%>
+                  <label class="form-label" for="customRange1">Last name</label>
+                  <% if @profile.last_name.nil? || @profile.last_name.empty? %>
+                  <p class="txt-blacks font-lights">Your last name is blank</p>
+                  <%else%>
+                  <p class="txt-blacks font-lights"><%= @profile.last_name %></p>
+                  <%end%>
+                  <label class="form-label" for="customRange1">Adrress</label>
+                  <% if @profile.address.nil? || @profile.address.empty? %>
+                  <p class="txt-blacks font-lights">Your address is blank</p>
+                  <%else%>
+                  <p class="txt-blacks font-lights"><%= @profile.address %></p>
+                  <%end%>
+                  <label class="form-label" for="customRange1">Gender</label>
+                  <% if @profile.gender.nil? || @profile.gender.empty? %>
+                  <p class="txt-blacks font-lights">Your gender is blank</p>
+                  <%else%>
+                  <p class="txt-blacks font-lights"><%= @profile.gender %></p>
+                  <%end%>
+                  <hr/>
+                  <label class="form-label" for="customRange1">Email</label>
+                  <p class="txt-blacks font-lights"><%= current_user.email %></p>
+
+                  <button class="mt-2 btn btn-dark shadow-0 border btn-rounded"
+                  id="btn-dark">Edit Profile</button>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+  </div>
+  </section>
