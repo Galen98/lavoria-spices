@@ -12,34 +12,36 @@
                   </div>
                   <label class="form-label" for="customRange1">First name</label>
                   <% if @profile.first_name.nil? || @profile.first_name.empty? %>
-                  <p class="txt-blacks font-lights">Your first name is blank</p>
+                  <p class="txt-blacks font-lights text-capitalize">Your first name is blank</p>
                   <%else%>
-                  <p class="txt-blacks font-lights"><%= @profile.first_name %></p>
+                  <p class="txt-blacks font-lights text-capitalize"><%= @profile.first_name %></p>
                   <%end%>
                   <label class="form-label" for="customRange1">Last name</label>
                   <% if @profile.last_name.nil? || @profile.last_name.empty? %>
-                  <p class="txt-blacks font-lights">Your last name is blank</p>
+                  <p class="txt-blacks font-lights text-capitalize">Your last name is blank</p>
                   <%else%>
-                  <p class="txt-blacks font-lights"><%= @profile.last_name %></p>
+                  <p class="txt-blacks font-lights text-capitalize"><%= @profile.last_name %></p>
                   <%end%>
                   <label class="form-label" for="customRange1">Adrress</label>
                   <% if @profile.address.nil? || @profile.address.empty? %>
-                  <p class="txt-blacks font-lights">Your address is blank</p>
+                  <p class="txt-blacks font-lights text-capitalize">Your address is blank</p>
                   <%else%>
-                  <p class="txt-blacks font-lights"><%= @profile.address %></p>
+                  <p class="txt-blacks font-lights text-capitalize"><%= @profile.address %></p>
                   <%end%>
                   <label class="form-label" for="customRange1">Gender</label>
                   <% if @profile.gender.nil? || @profile.gender.empty? %>
-                  <p class="txt-blacks font-lights">Your gender is blank</p>
+                  <p class="txt-blacks font-lights text-capitalize">Your gender is blank</p>
                   <%else%>
-                  <p class="txt-blacks font-lights"><%= @profile.gender %></p>
+                  <p class="txt-blacks font-lights text-capitalize"><%= @profile.gender %></p>
                   <%end%>
+                   <a href="<%= edit_profile_path(current_user.profile) %>" class="mt-2 mb-2 btn btn-dark shadow-0 border btn-rounded text-capitalize"
+                  id="btn-dark">Edit profile</a>
                   <hr/>
                   <label class="form-label" for="customRange1">Email</label>
                   <p class="txt-blacks font-lights"><%= current_user.email %></p>
 
-                  <button class="mt-2 btn btn-dark shadow-0 border btn-rounded"
-                  id="btn-dark">Edit Profile</button>
+                  <a href="/users/edit" class="mt-2 btn btn-dark shadow-0 border btn-rounded text-capitalize"
+                  id="btn-dark">Edit account</a>
                   </div>
                   </div>
                   </div>

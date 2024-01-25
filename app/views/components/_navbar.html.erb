@@ -29,7 +29,7 @@
 
       <% if current_user %>
       <a class="text-reset me-3">
-      <a class="text-reset me-3" href="/users/profile">
+      <a class="text-reset me-3" href="<%= profile_path(current_user.profile) %>">
       <button class="btn btn-outline-dark btn-rounded">Profile</button>
       </a>
       <%

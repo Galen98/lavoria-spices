@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   # get '/register', to:'application#register'
 
   #profile user
-  get '/users/profile', to:'profiles#show'
+  # get '/users/profile', to:'profiles#show'
+  # get '/users/profile/edit', to:'profiles#edit'
+  resources :profiles
 
   match "*path", to: "errors#not_found", via: :all
 end
